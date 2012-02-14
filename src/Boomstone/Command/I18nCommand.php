@@ -1,5 +1,16 @@
 <?php
 
+/**
+ * This file is part of the Boomstone PHP Silex boilerplate.
+ *
+ * https://github.com/Retentio/Boomstone
+ *
+ * (c) Ludovic Fleury <ludo.fleury@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Boomstone\Command;
 
 use Boomstone\Command\ApplicationAwareCommand;
@@ -21,6 +32,11 @@ use Symfony\Component\Translation\MessageCatalogue,
 use Symfony\Bridge\Twig\Translation\TwigExtractor,
     Symfony\Bridge\Twig\Extension\TranslationExtension;
 
+/**
+ * I18n Command
+ *
+ * Extract translated string from twig template.
+ */
 class I18nCommand extends ApplicationAwareCommand
 {
     public function __construct($name = null)

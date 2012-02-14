@@ -1,5 +1,16 @@
 <?php
 
+/**
+ * This file is part of the Boomstone PHP Silex boilerplate.
+ *
+ * https://github.com/Retentio/Boomstone
+ *
+ * (c) Ludovic Fleury <ludo.fleury@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Boomstone\Controller;
 
 use Silex\ControllerProviderInterface,
@@ -9,6 +20,9 @@ use Symfony\Component\Form\FormError;
 use Boomstone\Form;
 use Boomstone\Document\User\User;
 
+/**
+ * Account controller provider.
+ */
 class Account implements ControllerProviderInterface
 {
     public function connect(Application $app)

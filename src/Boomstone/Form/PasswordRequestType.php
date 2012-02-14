@@ -1,5 +1,16 @@
 <?php
 
+/**
+ * This file is part of the Boomstone PHP Silex boilerplate.
+ *
+ * https://github.com/Retentio/Boomstone
+ *
+ * (c) Ludovic Fleury <ludo.fleury@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Boomstone\Form;
 
 use Symfony\Component\Form\AbstractType,
@@ -7,6 +18,11 @@ use Symfony\Component\Form\AbstractType,
 
 use Symfony\Component\Validator\Constraints as Assert;
 
+/**
+ * PasswordRequestType
+ *
+ * @author Ludovic Fleury <ludo.fleury@gmail.com>
+ */
 class PasswordRequestType extends AbstractType
 {
     public function getName()
