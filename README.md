@@ -4,7 +4,7 @@ Boomstone, a spark for PHP project.
 Features
 --------
 
-* A file structure strongly inspired by [KnPLabs](http://knplabs.fr/)
+* A file structure strongly inspired by [KnpLabs](http://knplabs.fr/)
 * [MongoDB](http://www.mongodb.org/) document storage.
 * [Boomgo](https://github.com/Retentio/Boomgo) tiny Object Document Mapper.
 * __Console & Command__ aware of your Silex Application.
