@@ -18,7 +18,7 @@ Installation
 1. Vendors installations
 
 ```shell
-# chown u+x bin/vendors
+# chmod u+x bin/vendors
 bin/vendors install
 ```
 
