@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" datatype="plaintext" original="file.ext">
+    <body>
+      <trans-unit id="1">
+        <source>Successfully registered</source>
+        <target>Votre compte a été créé</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>Successfully signed in</source>
+        <target>Vous êtes connecté à votre compte</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>Successfully logged out</source>
+        <target>Vous vous êtes déconnecté</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>An email has been sent with the access recovery instructions</source>
+        <target>Un email a été envoyé avec les instructions pour récupérer vos accès</target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>Private area, you must be authenticated</source>
+        <target>Accès sécurisé, vous devez vous authentifier</target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>Restricted area, you don\'t have enough authorization</source>
+        <target>Accès restreint, vous n'avez pas les permissions nécessaires</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>Version changed</source>
+        <target>Version changed</target>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>Sorry, we do not suppord this language for the moment</source>
+        <target>Désolé, nous ne supportons pas encore cette langue</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

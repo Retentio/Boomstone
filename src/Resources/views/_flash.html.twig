@@ -1,0 +1,7 @@
+{% for type, message in app.session.getFlashes() %}
+    <div class="alert fade in alert-{{ type }}">
+      <a class="close" data-dismiss="alert" href="#">&times;</a>
+      <strong>{{ type|title }}:</strong>
+      {{ message }}
+    </div>
+{% endfor %}

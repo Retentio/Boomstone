@@ -1,0 +1,14 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Signin{% endblock %}
+
+{% block content %}
+    <form method="post" action="{{ path('signin_check') }}">
+
+        {% include "Sign/_form.html.twig" with {'legend': "Signin"} %}
+
+        <div class="actions">
+            <button class="btn primary">Signin</button>
+        </div>
+    </form>
+{% endblock %}

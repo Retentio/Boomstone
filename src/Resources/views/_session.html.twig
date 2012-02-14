@@ -1,0 +1,19 @@
+{% if app.session.get('user') %}
+    <ul class="nav pull-right">
+        <li class="divider-vertical"></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ app.session.get('user').email }} <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="{{ path('account') }}"><i class="icon-user"></i> {% trans from 'account' %}Account{% endtrans %}</a></li>
+                <li class="divider"></li>
+                <li><a href="{{ path('signout') }}"><i class="icon-off"></i> {% trans from 'account' %}Signout{% endtrans %}</a></li>
+            </ul>
+        </li>
+    </ul>
+{% else %}
+    <ul class="nav pull-right">
+        <li><a href="{{ path('signup') }}">{% trans from 'account' %}Signup{% endtrans %}</a></li>
+        <li class="divider-vertical"></li>
+        <li><a href="{{ path('signin') }}">{% trans from 'account' %}Signin{% endtrans %}</a></li>
+    </ul>
+{% endif %}

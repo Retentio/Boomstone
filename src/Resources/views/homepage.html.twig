@@ -1,0 +1,39 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+<div class="row">
+  <div class="span8 offset2">
+    <div class="hero-unit">
+      <a href="http://github.com/Retentio/Boomstone"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/71eeaab9d563c2b3c590319b398dd35683265e85/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub"></a>
+      <h1>Boomstone</h1>
+      <p><strong>{% trans from "homepage" %}Open source enlightenment shared, a spark for your next project.{% endtrans %}</strong></h3>
+      <p>{% trans from "homepage" %}Boomstone allows fast kick off for PHP project.<br />
+        <em>It was initially developped for <a href="http://retent.io">Retentio</a></em>{% endtrans %}</p>
+      <ul>
+        <li>{% trans from "homepage" %}The core relies on Silex, the PHP micro-framework.{% endtrans %}</li>
+        <li>{% trans from "homepage" %}The extended features (i18n, etc.) are possible thanks to Symfony components{% endtrans %}</li>
+        <li>{% trans from "homepage" %}The data/model layer uses Boomgo, a micro ODM on top of MongoDB{% endtrans %}</li>
+        <li>{% trans from "homepage" %}The UI is from Twitter Bootstrap v2{% endtrans %}</li>
+      </ul>
+    </div>
+    <div class="row-fluid">
+      <div class="span4">
+        <h2>Silex</h2>
+        <p>{% trans from "homepage" %}An awesome Micro-framework for PHP under MIT licence{% endtrans %}
+       </p>
+        <a class="btn" href="http://silex.sensiolabs.org/">More &raquo;</a></p>
+      </div><!--/span-->
+      <div class="span4">
+        <h2>Boomgo</h2>
+        <p>{% trans from "homepage" %}A tiny ODM in PHP for MongoDB (<abbr title="work in progress">wip</abbr>) under MIT licence{% endtrans %}</p>
+        <p><a class="btn" href="https://github.com/Retentio/Boomgo">More &raquo;</a></p>
+      </div><!--/span-->
+      <div class="span4">
+        <h2>Bootstrap</h2>
+        <p>{% trans from "homepage" %}HTML, CSS, and JS toolkit from Twitter under the Apache License v2{% endtrans %}</p>
+        <p><a class="btn" href="http://twitter.github.com/bootstrap/">More &raquo;</a></p>
+      </div><!--/span-->
+    </div><!--/row-->
+  </div><!--/span-->
+</div><!--/row-->
+{% endblock %}

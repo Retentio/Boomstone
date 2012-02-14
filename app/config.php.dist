@@ -1,0 +1,89 @@
+<?php
+
+// Debug mode
+$app['debug'] = true;
+
+// Some globals
+$app['cache.dir'] = __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'cache';
+$app['mailer.sender'] = array('sender@boomstone' => 'Boomstone');
+
+/**
+ * i18n
+ *
+ * Actually tested only with xliff
+ * should support all format provided by symfony
+ * @see
+ */
+$config['i18n'] = array(
+    'locale'                    => 'fr',
+    'locale_fallback'           => 'en',
+    'translation.format'        => 'xliff',
+    'translation.file_path'     => __DIR__.'/../src/Resources/locales/',
+    'translation.class_path'    => __DIR__.'/../vendor/Symfony/'
+);
+
+/**
+ * MongoDB
+ *
+ * Same as the native PHP driver configuration
+ * (mongodb.options key is optionnal)
+ * @see  php.net/MongoDB
+ */
+$config['mongodb'] = array(
+    'mongodb.servers' => array('mongodb://localhost:27017'),
+    'mongodb.options' =>  array(
+        'db'        => 'boomstone')
+);
+
+/**
+ * Boomgo
+ *
+ * Disclaimer: Boomgo implementation still a WIP.
+ * @see
+ */
+$config['boomgo'] = array(
+    'boomgo.mapper'     => 'StrictMapper',
+    'boomgo.parser'     => 'AnnotationParser',
+    'boomgo.formatter'  => 'Underscore2CamelFormatter',
+    'boomgo.cache'      => 'FileCache',
+    'boomgo.cache.options' => array($app['cache.dir'].DIRECTORY_SEPARATOR.'boomgo'),
+    'boomgo.repositories'  => 'Boomstone\Repository'
+);
+
+/**
+ * Session
+ *
+ * Warning: it use the version 2.1 of Symfony Session Component
+ * @see
+ */
+$config['session'] = array(
+    'session.storage.options' => array('auto_start' => true)
+);
+
+/**
+ * Swiftmailer
+ *
+ * This example is pre-configured for gmail.
+ * @see
+ */
+$config['swiftmailer'] = array(
+    'swiftmailer.class_path'  => __DIR__.'/../vendor/Swiftmailer/lib/classes',
+    'swiftmailer.options'     => array(
+        'host'         => 'smtp.gmail.com',
+        'port'         => 465,
+        'username'     => 'your@email',
+        'password'     => 'password',
+        'encryption'   => 'ssl',
+        'auth_mode'    => 'login')
+ );
+
+/**
+ * Twig Service configuration
+ * @see
+ */
+$config['twig'] = array(
+    'twig.class_path' => __DIR__.'/../vendor/silex/vendor/twig/lib',
+    'twig.path' => array(
+        __DIR__.'/../src/Resources/views',
+        __DIR__.'/../vendor/Symfony/Bridge/Twig/Resources/views/Form'),
+);

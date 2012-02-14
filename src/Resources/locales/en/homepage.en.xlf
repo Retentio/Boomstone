@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="file.ext">
+    <body>
+      <trans-unit id="1">
+        <source>Open source enlightenment shared, a spark for your next project.</source>
+        <target>Open source enlightenment shared, a spark for your next project.</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>Boomstone allows fast kick off for PHP project.&lt;br /&gt;
+        &lt;em&gt;It was initially developped for &lt;a href="http://retent.io"&gt;Retentio&lt;/a&gt;&lt;/em&gt;</source>
+        <target>Boomstone allows fast kick off for PHP project.&lt;br /&gt;
+        &lt;em&gt;It was initially developped for &lt;a href="http://retent.io"&gt;Retentio&lt;/a&gt;&lt;/em&gt;</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>The core relies on Silex, the PHP micro-framework.</source>
+        <target>The core relies on Silex, the PHP micro-framework.</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>The extended features (i18n, etc.) are possible thanks to Symfony components</source>
+        <target>The extended features (i18n, etc.) are possible thanks to Symfony components</target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>The data/model layer uses Boomgo, a micro ODM on top of MongoDB</source>
+        <target>The data/model layer uses Boomgo, a micro ODM on top of MongoDB</target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>The UI is from Twitter Bootstrap v2</source>
+        <target>The UI is from Twitter Bootstrap v2</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>An awesome Micro-framework for PHP under MIT licence</source>
+        <target>An awesome Micro-framework for PHP under MIT licence</target>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>A tiny ODM in PHP for MongoDB (&lt;abbr title="work in progress"&gt;wip&lt;/abbr&gt;) under MIT licence</source>
+        <target>A tiny ODM in PHP for MongoDB (&lt;abbr title="work in progress"&gt;wip&lt;/abbr&gt;) under MIT licence</target>
+      </trans-unit>
+      <trans-unit id="9">
+        <source>HTML, CSS, and JS toolkit from Twitter under the Apache License v2</source>
+        <target>HTML, CSS, and JS toolkit from Twitter under the Apache License v2</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

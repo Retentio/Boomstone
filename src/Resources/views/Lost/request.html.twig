@@ -1,0 +1,14 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Forgot your password ?{% endblock %}
+
+{% block content %}
+    <form method="post" action="{{ path('access_request') }}">
+
+        {% include "Lost/_PasswordRequestForm.html.twig" %}
+
+        <div class="actions">
+            <button class="btn primary">Send</button>
+        </div>
+    </form>
+{% endblock %}

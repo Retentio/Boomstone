@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" datatype="plaintext" original="file.ext">
+    <body>
+      <trans-unit id="1">
+        <source>Open source enlightenment shared, a spark for your next project.</source>
+        <target>La lumière open source partagée, un étincelle pour votre prochain projet.</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>Boomstone allows fast kick off for PHP project.&lt;br /&gt;
+        &lt;em&gt;It was initially developped for &lt;a href="http://retent.io"&gt;Retentio&lt;/a&gt;&lt;/em&gt;</source>
+        <target>Boomstone accélère vos lancements de projet PHP.&lt;br /&gt;
+        &lt;em&gt;L'outil a été initiallement développé pour &lt;a href="http://retent.io"&gt;Retentio&lt;/a&gt;&lt;/em&gt;</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>The core relies on Silex, the PHP micro-framework.</source>
+        <target>Le coeur repose sur Silex, le micro-framework PHP.</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>The extended features (i18n, etc.) are possible thanks to Symfony components</source>
+        <target>Les fonctionnalités avancées (i18n, etc.) sont possibles grâce aux composants Symfony</target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>The data/model layer uses Boomgo, a micro ODM on top of MongoDB</source>
+        <target>La couche modèle/donnée utilise Boomgo, un micro ODM surcouchant MongoDB</target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>The UI is from Twitter Bootstrap v2</source>
+        <target>L'interface utilisateur s'appuie sur Twitter Bootstrap v2</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>An awesome Micro-framework for PHP under MIT licence</source>
+        <target>Un excellent Micro-framework PHP sous licence MIT</target>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>A tiny ODM in PHP for MongoDB (&lt;abbr title="work in progress"&gt;wip&lt;/abbr&gt;) under MIT licence</source>
+        <target>Un mini ODM en PHP pour MongoDB (&lt;abbr title="work in progress = en cours de développement"&gt;wip&lt;/abbr&gt;) sous licence MIT</target>
+      </trans-unit>
+      <trans-unit id="9">
+        <source>HTML, CSS, and JS toolkit from Twitter under the Apache License v2</source>
+        <target>HTML, CSS, and JS toolkit de Twitter sous licence Apache License v2</target>
+      </trans-unit>
+      <trans-unit id="10">
+        <source>The data layer uses Boomgo, a micro ODM on top of MongoDB</source>
+        <target>The data layer uses Boomgo, a micro ODM on top of MongoDB</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

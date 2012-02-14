@@ -1,0 +1,13 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Password recovery{% endblock %}
+
+{% block content %}
+    <form method="post" action="{{ path('access_recover', {'token': app.request.get('token') }) }}">
+        {% include "Lost/_PasswordRecoveryForm.html.twig" %}
+
+        <div class="actions">
+            <button class="btn primary">Validate</button>
+        </div>
+    </form>
+{% endblock %}

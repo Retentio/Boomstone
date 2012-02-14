@@ -1,0 +1,93 @@
+@import "/../../vendor/bootstrap/less/bootstrap.less";
+@import "/../../vendor/bootstrap/less/responsive.less";
+
+html {
+    background-color:#383A38
+}
+
+body {
+    padding-top:60px;
+    padding-bottom: 40px;
+}
+
+.sidebar-nav {
+    padding: 9px 0;
+}
+
+@media (max-width: 980px) {
+    body {
+        padding-top:0px;
+    }
+    /* Unfloat brand */
+    .navbar-fixed-top .brand {
+        float: left;
+        margin-left: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+#add-app{
+    display:block;
+    float:left;
+    margin-left:5px;
+    margin-right:5px;
+    padding: 4px 10px;
+}
+
+.btn {
+  &.signup:hover {
+    color: #99CB25;
+  }
+
+  
+  &.signup {
+    .gradientBar(#666666, #414141);
+  }
+}
+
+.hero-unit {
+    h1 {
+        font-size: 46px;
+        span {
+            color:@blue;
+        }
+    }
+
+    background-color:@white;
+
+    //le before et le after ne marchent pas avec le background-color sur la balise html (utile pour avoir un footer qui prend tout le bas de page)
+    &:before{
+        content: "";
+        position: absolute;
+        z-index: -2;
+        right: 0;
+        border-radius: 10px 10px 10px 10px / 100px 100px 100px 100px;
+        bottom: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+        left: 0;
+        right: 50%;
+        top: 10px;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        z-index: -2;
+        left: 0;
+        border-radius: 10px 10px 10px 10px / 100px 100px 100px 100px;
+        bottom: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+        right: 0;
+        left: 50%;
+        top: 10px;
+    }
+
+    background: none repeat scroll 0 0 #FFFFFF;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    position: relative;
+
+}
+
+footer {
+    color: @grayDark
+}

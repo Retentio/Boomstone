@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="file.ext">
+    <body>
+      <trans-unit id="1">
+        <source>Successfully registered</source>
+        <target>Successfully registered</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>Successfully signed in</source>
+        <target>Successfully signed in</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>Successfully logged out</source>
+        <target>Successfully logged out</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>An email has been sent with the access recovery instructions</source>
+        <target>An email has been sent with the access recovery instructions</target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>Private area, you must be authenticated</source>
+        <target>Private area, you must be authenticated</target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>Restricted area, you don\'t have enough authorization</source>
+        <target>Restricted area, you don\'t have enough authorization</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>Version changed</source>
+        <target>Version changed</target>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>Sorry, we do not suppord this language for the moment</source>
+        <target>Sorry, we do not suppord this language for the moment</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
