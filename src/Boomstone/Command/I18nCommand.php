@@ -57,13 +57,13 @@ class I18nCommand extends ApplicationAwareCommand
         $twig = $app['twig'];
         $translator = $app['translator'];
 
-        $output->writeln(sprintf('Extract internationlized string in twig templates located in "<comment>/src/Resources/views</comment>"'));
+        $output->writeln('Extract internationlized string in twig templates located in "<comment>/src/Resources/views</comment>"');
 
         $newCatalogue = new MessageCatalogue($input->getArgument('locale'));
         $extractor  = new TwigExtractor($twig);
         $extractor->extract($rootDir.'/src/Resources/views', $newCatalogue);
 
-        $output->writeln(sprintf('Load existing translation file located in "<comment>/src/Resources/locales</comment>"'));
+        $output->writeln('Load existing translation file located in "<comment>/src/Resources/locales</comment>"');
 
         $app['translator']->loadCatalogue($input->getArgument('locale'));
         $oldCatalogue = $app['translator']->getCatalogues();
@@ -74,13 +74,13 @@ class I18nCommand extends ApplicationAwareCommand
 
         $catalogue = new MessageCatalogue($input->getArgument('locale'), $mergedTranslations);
 
-        $output->writeln(sprintf('Write updates to the translation file'));
+        $output->writeln('Write updates to the translation file');
 
         $dumper = $app['translator.dumper'];
         $writer = new TranslationWriter();
         $writer->addDumper('xliff', $dumper);
         $writer->writeTranslations($catalogue, 'xliff',  array('path' => $app['translation.file_path'].$input->getArgument('locale')));
 
-        $output->writeln('<info>Translation file for the locale '.$input->getArgument('locale').' Successfully updated !</info>');
+        $output->writeln(sprintf('<info>Translation file for the locale %s Successfully updated !</info>', $input->getArgument('locale')));
     }
 }
