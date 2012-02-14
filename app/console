@@ -3,6 +3,6 @@
 set_time_limit(0);
 $app = require_once __DIR__.'/bootstrap.php';
 
-$application = new \Boomstone\Console\Application('Boomstone Console', '1.0.0', $app);
+$application = new \Boomstone\Console\Application($app, 'Boomstone Console', '1.0.0');
 $application->add(new \Boomstone\Command\I18nCommand('i18n:update'));
 $application->run();

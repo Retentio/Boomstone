@@ -30,11 +30,11 @@ class Application extends BaseApplication
     /**
      * Constructor.
      *
+     * @param Silex\Appplication $silexApplication
      * @param string             $name              The name of the application
      * @param string             $version           The version of the application
-     * @param Silex\Appplication $silexApplication
      */
-    public function __construct($name = 'UNKNOWN', $version = 'UNKNOWN', SilexApplication $silexApplication)
+    public function __construct(SilexApplication $silexApplication, $name = 'UNKNOWN', $version = 'UNKNOWN')
     {
         parent::__construct($name, $version);
         $this->silexApplication = $silexApplication;
