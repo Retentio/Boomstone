@@ -15,6 +15,8 @@ if (!file_exists(__DIR__.'/config.php')) {
     throw new RuntimeException('You must create your own configuration file ("src/config.php"). See "src/config.php.dist" for an example config file.');
 }
 require_once __DIR__.'/config.php';
+// require_once __DIR__.'/config_dev.php';
+// require_once __DIR__.'/config_test.php';
 
 /** Silex Extensions */
 use Silex\Provider\SymfonyBridgesServiceProvider,
