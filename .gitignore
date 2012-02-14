@@ -1,3 +1,4 @@
 app/config.php
+cache/
 web/js/bootstrap
 vendor/*
