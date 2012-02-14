@@ -127,6 +127,7 @@ Roadmap
 -------
 
 * Improve I18n command.
+* Add unit/functionnal test.
 * Relax and get some PR from the open source community.
 
 Limitations
