@@ -15,22 +15,15 @@ namespace Boomstone\Command;
 
 use Boomstone\Command\ApplicationAwareCommand;
 
-use Symfony\Component\Console\Input\InputDefinition,
-    Symfony\Component\Console\Input\InputOption,
-    Symfony\Component\Console\Input\InputArgument,
+use Symfony\Component\Console\Input\InputArgument,
     Symfony\Component\Console\Input\InputInterface,
-    Symfony\Component\Console\Output\OutputInterface,
-    Symfony\Component\Console\Application,
-    Symfony\Component\Console\Helper\HelperSet;
+    Symfony\Component\Console\Output\OutputInterface;
 
 use Symfony\Component\Translation\MessageCatalogue,
-    Symfony\Component\Translation\Loader\XliffFileLoader,
-    Symfony\Component\Translation\Dumper\XliffFileDumper,
     Symfony\Component\Translation\Writer\TranslationWriter;
 
 
-use Symfony\Bridge\Twig\Translation\TwigExtractor,
-    Symfony\Bridge\Twig\Extension\TranslationExtension;
+use Symfony\Bridge\Twig\Translation\TwigExtractor;
 
 /**
  * I18n Command
