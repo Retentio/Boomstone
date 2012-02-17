@@ -2,3 +2,5 @@ app/config.php
 cache/
 web/js/bootstrap
 vendor/*
+composer.phar
+composer.lock

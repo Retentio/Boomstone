@@ -1,14 +1,8 @@
 <?php
 
-require_once __DIR__.'/../vendor/silex/autoload.php';
+require_once __DIR__.'/../vendor/.composer/autoload.php';
 
 $app = new Silex\Application();
-
-$app['autoloader']->registerNamespaces(array(
-    'Boomstone'      => __DIR__.'/../src',
-    'Symfony'       => __DIR__.'/../vendor',
-    'Boomgo'        => __DIR__.'/../vendor/boomgo/src'
-));
 
 // Include configuration
 if (!file_exists(__DIR__.'/config.php')) {
