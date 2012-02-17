@@ -1,0 +1,67 @@
+{
+    "name": "retentio/boomstone",
+    "type": "library",
+    "description": "Boomstone, a spark for PHP project",
+    "keywords": ["silex", "boomgo", "bootstrap", "mongodb"],
+    "homepage": "https://github.com/Retentio/Boomstone",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ludovic Fleury",
+            "email": "ludo.fleury@gmail.com"
+        }
+    ],
+    "repositories": {
+        "retentio/boomgo": {
+            "package": {
+                "name": "retentio/boomgo",
+                "version": "master-dev",
+                "dist": {
+                    "url": "https://github.com/retentio/Boomgo/zipball/master",
+                    "type": "zip"
+                },
+                "source": {
+                    "url": "git://github.com/retentio/Boomgo.git",
+                    "type": "git",
+                    "reference": "master"
+                },
+                "autoload": {
+                    "psr-0": { "Boomgo": "" }
+                },
+                "target-dir": ""
+            }
+        },
+        "twitter/bootstrap": {
+            "package": {
+                "name": "twitter/bootstrap",
+                "version": "2.0.1",
+                "source": {
+                    "url": "git://github.com/twitter/bootstrap.git",
+                    "type": "git",
+                    "reference": "v2.0.1"
+                },
+                "target-dir": ""
+            }
+        }
+    },
+    "require": {
+        "php": ">=5.3.2",
+        "silex/silex": "*",
+        "symfony/finder": "2.1.*",
+        "symfony/translation": "2.1.*",
+        "symfony/twig-bridge": "2.1.*",
+        "symfony/form": "2.1.*",
+        "symfony/validator": "2.1.*",
+        "symfony/console": "2.1.*",
+        "symfony/config": "2.1.*",
+        "swiftmailer/swiftmailer": "4.1.5",
+        "retentio/boomgo": "*",
+        "twitter/bootstrap": "2.0.1"
+    },
+    "autoload": {
+        "psr-0": {
+            "Boomstone": "src"
+        }
+    },
+    "target-dir": "Boomstone"
+}

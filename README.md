@@ -15,11 +15,11 @@ Features
 Installation
 ------------
 
-1. Vendors installations
+1. Vendors installation
 
 ```shell
-# chown u+x bin/vendors
-bin/vendors install
+wget http://getcomposer.org/composer.phar
+php composer.phar install
 ```
 
 2. Create the cache dir
@@ -33,8 +33,8 @@ chmod -R 777 cache src/Resources/locales
 
 ```
 mkdir web/js/bootstrap
-cp vendor/bootstrap/js/*.js web/js/bootstrap/
-cp -R vendor/bootstrap/img web/
+cp vendor/twitter/bootstrap/js/*.js web/js/bootstrap/
+cp -R vendor/twitter/bootstrap/img web/
 ```
 
 4. Configuration
@@ -62,7 +62,7 @@ Almost all code logic lives under the `src/` path.
 
 ### Console
 
-Boomstone provides console "à la Symfony" : `php app/console`. The application aware command allows you to access your silex application.
+Boomstone provides console "a la Symfony" : `php app/console`. The application aware command allows you to access your silex application.
 
 ```php
 <?php
