@@ -31,6 +31,14 @@ $app->before(function() use ($app) {
 });
 
 /**
+ * Error handler
+ */
+$app->error(function (\Exception $e, $code) {
+    return new \Symfony\Component\HttpFoundation\Response($e->getMessage(), $code);
+});
+
+
+/**
  * homepage
  *
  * GET /

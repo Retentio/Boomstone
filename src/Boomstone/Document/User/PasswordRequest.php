@@ -26,13 +26,13 @@ class PasswordRequest
     static $ttl = 3600;
 
     /**
-     * @Boomgo
+     * @Persistent
      * @var string
      */
     private $token;
 
     /**
-     * @Boomgo
+     * @Persistent
      * @var string
      */
     private $expiresAt;

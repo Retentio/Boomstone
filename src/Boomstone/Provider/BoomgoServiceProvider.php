@@ -13,7 +13,8 @@
 
 namespace Boomstone\Provider;
 
-use Boomgo;
+use Boomgo\Provider\RepositoryProvider;
+
 use Silex\Application,
     Silex\ServiceProviderInterface;
 
@@ -28,21 +29,16 @@ class BoomgoServiceProvider implements ServiceProviderInterface
     {
         $app['boomgo'] = $app->share(function () use ($app) {
 
-            $parserClass = '\\Boomgo\\Parser\\'.$app['boomgo.parser'];
+            $mapperProviderCacheClass =  'Boomgo\\Cache\\'.$app['boomgo.mapper.cache'];
+            $mapperProviderCache = new $mapperProviderCacheClass;
 
-            $formatterClass = '\\Boomgo\\Formatter\\'.$app['boomgo.formatter'];
+            $mapperProviderClass = 'Boomgo\\Provider\\MapperProvider';
+            $mapperProvider = new $mapperProviderClass($app['boomgo.mapper.namespace'], $app['boomgo.document.namespace'], $mapperProviderCache);
 
-            $cacheClass = '\\Boomgo\\Cache\\'.$app['boomgo.cache'];
-            $cacheOptions = (isset($app['boomgo.cache.options'])) ? implode($app['boomgo.cache.options'],',') : null;
+            $repositoryProviderCacheClass =  'Boomgo\\Cache\\'.$app['boomgo.repository.cache'];
+            $repositoryProviderCache = new $repositoryProviderCacheClass;
 
-            $mapperClass = '\\Boomgo\\Mapper\\'.$app['boomgo.mapper'];
-
-            $cache = new $cacheClass($cacheOptions);
-            $formatter = new $formatterClass($formatterOptions);
-            $parser= new $parserClass($formatter);
-
-            $mapper = new $mapperClass($parser, $cache);
-            return new Boomgo\Manager($app['mongodb'], $mapper, $app['mongodb.options']['db'], $app['boomgo.repositories']);
+            return new RepositoryProvider($app['boomgo.repository.namespace'], $app['boomgo.document.namespace'], $repositoryProviderCache, $app['mongodb'], $mapperProvider);
         });
     }
 }

@@ -24,55 +24,56 @@ use Boomstone\Document\User\PasswordRequest;
 class User
 {
     /**
-     * @Boomgo native \MongoId
-     * @var MongoId
+     * @Persistent
+     * @var \MongoId
      */
     private $id;
 
     /**
-     * @Boomgo
+     * @Persistent
      * @var string
      */
     private $email;
 
     /**
-     * @Boomgo
+     * @Persistent
      * @var string
      */
     private $password;
 
     /**
-     * @Boomgo
+     * @Persistent
      * @var string
      */
     private $salt;
 
     /**
-     * @Boomgo
+     * @Persistent
      * @var boolean
      */
     private $confirmed;
 
     /**
-     * @Boomgo
+     * @Persistent
      * @var boolean
      */
     private $locked;
 
     /**
-     * @Boomgo
+     * @Persistent
      * @var array
      */
     private $roles;
 
     /**
-     * @Boomgo Document Boomstone\Document\User\PasswordRequest
+     * @Persistent
+     * @var Boomstone\Document\User\PasswordRequest
      */
     private $passwordRequest;
 
     /**
-     * @Boomgo
-     * @var timestamp
+     * @Persistent
+     * @var string
      */
     private $createdAt;
 

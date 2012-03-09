@@ -11,7 +11,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Boomstone\Repository;
+namespace Boomstone\Repository\User;
 
 use Boomgo\Repository;
 use Boomstone\Document\User\User,
@@ -25,17 +25,7 @@ use Boomstone\Document\User\User,
  */
 class UserRepository extends Repository
 {
-    static $collection = 'users';
-
-    public function getCollectionName()
-    {
-        return static::$collection;
-    }
-
-    public function getDocumentClass()
-    {
-        return 'Boomstone\Document\User\User';
-    }
+    const COLLECTION = 'users';
 
     /**
      * Return an User or false
@@ -47,13 +37,14 @@ class UserRepository extends Repository
     {
         $data = $this->connection
             ->selectDB('boomstone')
-            ->selectCollection($this->getCollectionName())
+            ->selectCollection(self::COLLECTION)
             ->findOne(array('email' => $email));
 
         if (null === $data)  {
             return null;
         }
-        return $this->hydrate($data);
+
+        return $this->getMapper()->unserialize($data);
     }
 
     /**
@@ -74,7 +65,7 @@ class UserRepository extends Repository
         if (null === $data)  {
             return null;
         }
-        return $this->hydrate($data);
+        return $this->getMapper()->hydrate($data);
     }
 
     /**
@@ -91,18 +82,15 @@ class UserRepository extends Repository
         if ($user->getPassword() === $encodedPassword) {
             return true;
         }
+
         return false;
     }
 
-    protected function preSave($object)
+    public function save(User $user, array $options = array())
     {
-        if (null === $object->getCreatedAt()) {
-
-        }
-    }
-
-    protected function postSave($object, $data)
-    {
-        $object->setId($data['_id']);
+        $this->connection
+            ->selectDB('boomstone')
+            ->selectCollection(self::COLLECTION)
+            ->save($this->getMapper()->serialize($user), $options);
     }
 }

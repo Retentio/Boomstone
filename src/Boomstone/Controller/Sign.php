@@ -55,14 +55,14 @@ class Sign implements ControllerProviderInterface
             if ($form->isValid()) {
                 $data = $form->getData();
 
-                $user = $app['boomgo']->getRepository('User')->findOneByEmail($data['email']);
+                $user = $app['boomgo']->get('Boomstone\Document\User\User')->findOneByEmail($data['email']);
 
                 if (null === $user) {
                     // Save user
                     $user = new User();
                     $user->setEmail($data['email']);
                     $user->setPassword(\Boomstone\Utils\Toolbox::encode($data['password'], $user->getSalt()));
-                    $app['boomgo']->getRepository('User')->save($user);
+                    $app['boomgo']->get('Boomstone\Document\User\User')->save($user);
 
                     // Welcome Email
                     $message = \Swift_Message::newInstance()
@@ -111,10 +111,10 @@ class Sign implements ControllerProviderInterface
             if ($form->isValid()) {
                 $data = $form->getData();
 
-                $user = $app['boomgo']->getRepository('User')->findOneByEmail($data['email']);
+                $user = $app['boomgo']->get('Boomstone\Document\User\User')->findOneByEmail($data['email']);
 
                 if (null !== $user) {
-                    if ($app['boomgo']->getRepository('User')->authenticate($user, $data['password'])) {
+                    if ($app['boomgo']->get('Boomstone\Document\User\User')->authenticate($user, $data['password'])) {
                         $app['session']->set('user', $user);
 
                          $app['session']->setFlash('success', $app['translator']->trans('Successfully signed in', array(), 'flash'));

@@ -1,4 +1,5 @@
 app/config.php
+src/Boomstone/Mapper
 cache/
 web/js/bootstrap
 vendor/*
