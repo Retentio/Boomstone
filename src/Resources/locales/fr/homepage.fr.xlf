@@ -4,7 +4,7 @@
     <body>
       <trans-unit id="1">
         <source>Open source enlightenment shared, a spark for your next project.</source>
-        <target>La lumière open source partagée, un étincelle pour votre prochain projet.</target>
+        <target>La lumière open source partagée, une étincelle pour votre prochain projet.</target>
       </trans-unit>
       <trans-unit id="2">
         <source>Boomstone allows fast kick off for PHP project.&lt;br /&gt;
