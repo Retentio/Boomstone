@@ -11,9 +11,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Boomstone\Document\User;
+namespace Boomstone\Document;
 
-use Boomstone\Document\User\PasswordRequest;
+use Boomstone\Document\PasswordRequest;
 
 /**
  * User
@@ -67,7 +67,7 @@ class User
 
     /**
      * @Persistent
-     * @var Boomstone\Document\User\PasswordRequest
+     * @var Boomstone\Document\PasswordRequest
      */
     private $passwordRequest;
 

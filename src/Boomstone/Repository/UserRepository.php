@@ -11,11 +11,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Boomstone\Repository\User;
+namespace Boomstone\Repository;
 
 use Boomgo\Repository;
-use Boomstone\Document\User\User,
-    Boomstone\Document\User\PasswordRequest;
+use Boomstone\Document\User,
+    Boomstone\Document\PasswordRequest;
 
 /**
  * UserRepository
@@ -56,8 +56,8 @@ class UserRepository extends Repository
     public function findOneByRecoveryToken($token)
     {
         $data = $this->connection
-            ->selectDB('retentio')
-            ->selectCollection($this->getCollectionName())
+            ->selectDB('boomstone')
+            ->selectCollection(self::COLLECTION)
             ->findOne(array('$and' => array(
                 array('password_request.token' => $token),
                 array('password_request.expires_at' => array('$gte' => time())))));
@@ -65,7 +65,7 @@ class UserRepository extends Repository
         if (null === $data)  {
             return null;
         }
-        return $this->getMapper()->hydrate($data);
+        return $this->getMapper()->unserialize($data);
     }
 
     /**

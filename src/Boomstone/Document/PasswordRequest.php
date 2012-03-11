@@ -11,7 +11,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Boomstone\Document\User;
+namespace Boomstone\Document;
 
 /**
  * PasswordRequest

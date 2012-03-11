@@ -18,8 +18,8 @@ use Silex\ControllerProviderInterface,
     Silex\Application;
 use Symfony\Component\Form\FormError;
 use Boomstone\Form;
-use Boomstone\Document\User\User,
-    Boomstone\Document\User\PasswordRequest;
+use Boomstone\Document\User,
+    Boomstone\Document\PasswordRequest;
 
 /**
  * Lost controller provider.
@@ -54,14 +54,14 @@ class Lost implements ControllerProviderInterface
             if ($form->isValid()) {
                 $data = $form->getData();
 
-                $user = $app['boomgo']->getRepository('User')->findOneByEmail($data['email']);
+                $user = $app['boomgo']->get('User')->findOneByEmail($data['email']);
 
                 if (null !== $user) {
                     $passwordRequest = new PasswordRequest();
                     $user->setPasswordRequest($passwordRequest);
-                    $app['boomgo']->getRepository('User')->save($user);
+                    $app['boomgo']->get('User')->save($user);
 
-                    $recoverLink = $app['url_generator']->generate('password_recovery', array('token' => $passwordRequest->getToken()),true);
+                    $recoverLink = $app['url_generator']->generate('access_recovery', array('token' => $passwordRequest->getToken()),true);
 
                     $message = \Swift_Message::newInstance()
                         ->setSubject('Retentio to the rescue')
@@ -85,7 +85,7 @@ class Lost implements ControllerProviderInterface
          * Access recovery form
          */
         $controllers->get('/recovery/{token}', function($token) use ($app) {
-            $user = $app['boomgo']->getRepository('User')->findOneByRecoveryToken($token);
+            $user = $app['boomgo']->get('User')->findOneByRecoveryToken($token);
 
             if (null === $user) {
                 return $app->redirect($app['url_generator']->generate('homepage'));
@@ -103,7 +103,7 @@ class Lost implements ControllerProviderInterface
          * Access recovery process
          */
         $controllers->post('/recovery/{token}', function($token) use ($app) {
-            $user = $app['boomgo']->getRepository('User')->findOneByRecoveryToken($token);
+            $user = $app['boomgo']->get('User')->findOneByRecoveryToken($token);
 
             if (null === $user) {
                 return $app->redirect($app['url_generator']->generate('homepage'));
@@ -125,8 +125,8 @@ class Lost implements ControllerProviderInterface
 
                 if (!$form->hasErrors()) {
                     $user->resetPasswordRequest(\Boomstone\Utils\Toolbox::encode($data['password'], $user->getSalt()));
-                    $app['boomgo']->getRepository('User')->save($user);
-                    return $app->redirect($app['url_generator']->generate('sign_in'));
+                    $app['boomgo']->get('User')->save($user);
+                    return $app->redirect($app['url_generator']->generate('signin'));
                 }
             }
 

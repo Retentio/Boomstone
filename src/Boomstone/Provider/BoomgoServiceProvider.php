@@ -38,7 +38,13 @@ class BoomgoServiceProvider implements ServiceProviderInterface
             $repositoryProviderCacheClass =  'Boomgo\\Cache\\'.$app['boomgo.repository.cache'];
             $repositoryProviderCache = new $repositoryProviderCacheClass;
 
-            return new RepositoryProvider($app['boomgo.repository.namespace'], $app['boomgo.document.namespace'], $repositoryProviderCache, $app['mongodb'], $mapperProvider);
+            $repositoryProvider = new RepositoryProvider($app['boomgo.repository.namespace'], $app['boomgo.document.namespace'], $repositoryProviderCache, $app['mongodb'], $mapperProvider);
+
+            foreach ($app['boomgo.document.base_namespace'] as $key => $namespace) {
+                $repositoryProvider->addBaseNamespace($key, $namespace);
+            }
+
+            return $repositoryProvider;
         });
     }
 }
