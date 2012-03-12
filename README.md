@@ -17,30 +17,36 @@ Installation
 
 1. Vendors installation
 
-```shell
-wget http://getcomposer.org/composer.phar
-php composer.phar install
+```bash
+$ wget http://getcomposer.org/composer.phar
+$ php composer.phar install
 ```
 
 2. Create the cache dir
 
-```
-mkdir cache cache/boomgo
-chmod -R 777 cache src/Resources/locales
+```bash
+$ mkdir cache cache/boomgo
+$ chmod -R 777 cache src/Resources/locales
 ```
 
 3. Export twitter bootstrap assets
 
-```
-mkdir web/js/bootstrap
-cp vendor/twitter/bootstrap/js/*.js web/js/bootstrap/
-cp -R vendor/twitter/bootstrap/img web/
+```bash
+$ mkdir web/js/bootstrap
+$ cp vendor/twitter/bootstrap/js/*.js web/js/bootstrap/
+$ cp -R vendor/twitter/bootstrap/img web/
 ```
 
 4. Configuration
 
+```bash
+$ cp app/config.php.dist app/config.php
 ```
-cp app/config.php.dist app/config.php
+
+5. Generate the mappers for Boomgo ODM, (It needs the right to write aside of the Document folder).
+
+```bash
+$ vendor/bin/boomgo generate:mappers /your_absolute_path_to/boomstone/src/Boomstone/Document
 ```
 
 How to use it
