@@ -18,7 +18,7 @@ use Silex\ControllerProviderInterface,
     Silex\Application;
 use Symfony\Component\Form\FormError;
 use Boomstone\Form;
-use Boomstone\Document\User\User;
+use Boomstone\Document\User;
 
 /**
  * Account controller provider.
