@@ -42,12 +42,12 @@ $config['mongodb'] = array(
  * @see
  */
 $config['boomgo'] = array(
-    'boomgo.mapper'     => 'StrictMapper',
-    'boomgo.parser'     => 'AnnotationParser',
-    'boomgo.formatter'  => 'Underscore2CamelFormatter',
-    'boomgo.cache'      => 'FileCache',
-    'boomgo.cache.options' => array($app['cache.dir'].DIRECTORY_SEPARATOR.'boomgo'),
-    'boomgo.repositories'  => 'Boomstone\Repository'
+    'boomgo.mapper.cache'            => 'ArrayCache',
+    'boomgo.repository.cache'        => 'ArrayCache',
+    'boomgo.document.namespace'      => 'Document',
+    'boomgo.repository.namespace'    => 'Repository',
+    'boomgo.document.base_namespace' => array('default' => 'Boomstone\\Document'),
+    'boomgo.mapper.namespace'        => 'Mapper'
 );
 
 /**
@@ -67,7 +67,7 @@ $config['session'] = array(
  * @see
  */
 $config['swiftmailer'] = array(
-    'swiftmailer.class_path'  => __DIR__.'/../vendor/Swiftmailer/lib/classes',
+    'swiftmailer.class_path'  => __DIR__.'/../vendor/swiftmailer/swiftmailer/lib/classes',
     'swiftmailer.options'     => array(
         'host'         => 'smtp.gmail.com',
         'port'         => 465,
@@ -82,8 +82,8 @@ $config['swiftmailer'] = array(
  * @see
  */
 $config['twig'] = array(
-    'twig.class_path' => __DIR__.'/../vendor/silex/vendor/twig/lib',
+    'twig.class_path' => __DIR__.'/../vendor/twig/twig/lib',
     'twig.path' => array(
         __DIR__.'/../src/Resources/views',
-        __DIR__.'/../vendor/Symfony/Bridge/Twig/Resources/views/Form'),
+        __DIR__.'/../vendor/symfony/twig-bridge/Symfony/Bridge/Twig/Resources/views/Form'),
 );
