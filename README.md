@@ -116,7 +116,7 @@ locale_path/fr/homepage.fr.xlf
 locale_path/fr/error.fr.xlf
 ```
 
-### Custom Service Provider
+### Custom Validator Service Provider
 
 State of art, yet functionnal, this provider __enables all the features of Symfony Validator Component__:
 
