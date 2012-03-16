@@ -9,6 +9,8 @@ Features
 * [Boomgo](https://github.com/Retentio/Boomgo) tiny Object Document Mapper.
 * __Console & Command__ aware of your Silex Application.
 * __i18n__ command to extract strings from twig.
+* A custom __Validator Service Provider__ wich allows Yaml validation & service injection
+* An __"unique" validator for Boomgo document__ using Boomgo service & custom validation.
 * Basic __user actions__: signup, signin & recovery password.
 * Basic __security filter__.
 
@@ -113,6 +115,19 @@ This will output one file per domain
 locale_path/fr/homepage.fr.xlf
 locale_path/fr/error.fr.xlf
 ```
+
+### Custom Service Provider
+
+State of art, yet functionnal, this provider __enables all the features of Symfony Validator Component__:
+
+* It eases usage of yml, xml loader for validation.
+* It allows you to inject depedencies in your custom constraints/validator (like a database connection).
+
+Check the [config.php.dist](https://github.com/Retentio/Boomstone/blob/master/app/config.php.dist#L89) configuration to see all the available options and the [Validation/User.yml](https://github.com/Retentio/Boomstone/blob/master/src/Boomstone/Validation/User.yml) definition file.
+
+### Boomgo unique validator
+
+An use-case of the __custom Validator Service Provider__ which rely on Boomgo ODM to __ensure the uniqueness of a set of one or many key in MongoDB__.
 
 ### Basic Security filter
 

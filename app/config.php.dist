@@ -87,3 +87,15 @@ $config['twig'] = array(
         __DIR__.'/../src/Resources/views',
         __DIR__.'/../vendor/symfony/twig-bridge/Symfony/Bridge/Twig/Resources/views/Form'),
 );
+
+/**
+ * Validator Service configuration
+ */
+$config['validator'] = array(
+    'validator.mapping.metadata_factory_class' => '\\Symfony\\Component\\Validator\\Mapping\\ClassMetadataFactory',
+    'validator.mapping.loader_class' => '\\Symfony\\Component\\Validator\\Mapping\\Loader\\YamlFilesLoader',
+    'validator.mapping.cache_class' => null,
+    'validator.mapping.cache_prefix' => null,
+    'validator.mapping.path' => __DIR__.'/../src/Boomstone/Validation',
+    'validator.services' => array('boomgo.validator.unique' => 'boomgo.validator.unique')
+);
