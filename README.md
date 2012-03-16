@@ -158,4 +158,5 @@ Limitations
 * The i18n command was tested only with Xliff format
 * The i18n command won't remove old and unused string (yet it appear to put them at the end of the file)
 * The i18n command won't extract string from controller and forms (should be manually writen)
+* The Custom Validator service provider allows you to use the APC cache from the Symfony validator component, yet there is no built-in method to clear this cache, you'll have to do this manually.
 
