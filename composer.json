@@ -35,6 +35,7 @@
         "symfony/form": "2.1.*",
         "symfony/validator": "2.1.*",
         "symfony/config": "2.1.*",
+        "symfony/yaml": "2.1.*",
         "swiftmailer/swiftmailer": "4.1.5",
         "twitter/bootstrap": "2.0.1"
     },

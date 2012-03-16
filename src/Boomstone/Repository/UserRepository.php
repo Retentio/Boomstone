@@ -23,9 +23,21 @@ use Boomstone\Document\User,
  * @author Antoine Guiral
  * @author Ludovic Fleury <ludo.fleury@gmail.com>
  */
+
 class UserRepository extends Repository
 {
-    const COLLECTION = 'users';
+    static protected $database = 'boomstone';
+    static protected $collection = 'users';
+
+    public function getDatabase()
+    {
+        return static::$database;
+    }
+
+    public function getCollection()
+    {
+        return static::$collection;
+    }
 
     /**
      * Return an User or false
@@ -36,8 +48,8 @@ class UserRepository extends Repository
     public function findOneByEmail($email)
     {
         $data = $this->connection
-            ->selectDB('boomstone')
-            ->selectCollection(self::COLLECTION)
+            ->selectDB(static::$database)
+            ->selectCollection(static::$collection)
             ->findOne(array('email' => $email));
 
         if (null === $data)  {
@@ -56,11 +68,11 @@ class UserRepository extends Repository
     public function findOneByRecoveryToken($token)
     {
         $data = $this->connection
-            ->selectDB('boomstone')
-            ->selectCollection(self::COLLECTION)
+            ->selectDB(static::$database)
+            ->selectCollection(static::$collection)
             ->findOne(array('$and' => array(
-                array('password_request.token' => $token),
-                array('password_request.expires_at' => array('$gte' => time())))));
+                array('passwordRequest.token' => $token),
+                array('passwordRequest.expiresAt' => array('$gte' => time())))));
 
         if (null === $data)  {
             return null;
@@ -89,8 +101,8 @@ class UserRepository extends Repository
     public function save(User $user, array $options = array())
     {
         $this->connection
-            ->selectDB('boomstone')
-            ->selectCollection(self::COLLECTION)
+            ->selectDB(static::$database)
+            ->selectCollection(static::$collection)
             ->save($this->getMapper()->serialize($user), $options);
     }
 }

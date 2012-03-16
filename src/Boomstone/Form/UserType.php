@@ -39,14 +39,8 @@ class UserType extends AbstractType
     public function getDefaultOptions(array $options)
     {
         $options = array_merge(array(
-            'validation_constraint' => new Assert\Collection(array(
-                'fields' => array(
-                    'email' => array(new Assert\NotBlank(), new Assert\Email()),
-                    'password' => new Assert\NotBlank(),
-                ),
-                'allowExtraFields' => true,
-            ))
-        ), $options);
+            'data_class' => 'Retentio\Document\User'),
+            $options);
 
         return $options;
     }

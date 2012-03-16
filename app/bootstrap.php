@@ -17,21 +17,23 @@ use Silex\Provider\SymfonyBridgesServiceProvider,
     Silex\Provider\UrlGeneratorServiceProvider,
     Silex\Provider\SessionServiceProvider,
     Silex\Provider\FormServiceProvider,
-    Silex\Provider\ValidatorServiceProvider,
     Silex\Provider\TranslationServiceProvider,
     Silex\Provider\SwiftmailerServiceProvider,
     Silex\Provider\TwigServiceProvider;
 use Boomstone\Provider\BoomgoServiceProvider,
     Boomstone\Provider\MongoDBServiceProvider,
+    Boomstone\Provider\ValidatorServiceProvider,
+    Boomstone\Provider\BoomgoUniqueDocumentValidatorServiceProvider,
     Boomstone\Provider\I18nServiceProvider;
 
 $app->register(new SymfonyBridgesServiceProvider());
 $app->register(new UrlGeneratorServiceProvider());
-$app->register(new FormServiceProvider());
-$app->register(new ValidatorServiceProvider());
 $app->register(new I18nServiceProvider(), $config['i18n']);
 $app->register(new MongoDbServiceProvider(), $config['mongodb']);
+$app->register(new FormServiceProvider());
+$app->register(new ValidatorServiceProvider(), $config['validator']);
 $app->register(new BoomgoServiceProvider(), $config['boomgo']);
+$app->register(new BoomgoUniqueDocumentValidatorServiceProvider());
 $app->register(new SessionServiceProvider(), $config['session']);
 $app->register(new TwigServiceProvider(), $config['twig']);
 $app->register(new SwiftmailerServiceProvider(), $config['swiftmailer']);

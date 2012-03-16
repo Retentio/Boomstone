@@ -1,0 +1,10 @@
+Retentio\Document\User:
+    constraints:
+        - Boomstone\Validator\Constraints\BoomgoUnique: { keys:[email], groups: [registration] }
+    properties:
+        email:
+            - NotBlank: { groups: [registration] }
+            - Email: { groups: [registration] }
+        password:
+            - NotBlank: { groups: [registration] }
+            - MinLength: { limit: 6, groups: [registration] }
