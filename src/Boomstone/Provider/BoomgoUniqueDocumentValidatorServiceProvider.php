@@ -13,7 +13,7 @@
 
 namespace Boomstone\Provider;
 
-use Retentio\Validator\Constraints\BoomgoUniqueValidator;
+use Boomstone\Validator\Constraints\BoomgoUniqueDocumentValidator;
 
 use Silex\Application,
     Silex\ServiceProviderInterface;
@@ -28,7 +28,7 @@ class BoomgoUniqueDocumentValidatorServiceProvider implements ServiceProviderInt
     public function register(Application $app)
     {
         $app['boomgo.validator.unique'] = $app->share(function () use ($app) {
-            return new BoomgoUniqueValidator($app['boomgo']);
+            return new BoomgoUniqueDocumentValidator($app['boomgo']);
         });
     }
 }
