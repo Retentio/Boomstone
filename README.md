@@ -127,7 +127,7 @@ Check the [config.php.dist](https://github.com/Retentio/Boomstone/blob/master/ap
 
 ### Boomgo unique validator
 
-An use-case of the __custom Validator Service Provider__ which rely on Boomgo ODM to __ensure the uniqueness of a set of one or many key in MongoDB__.
+An use-case of the __custom Validator Service Provider__ which rely on Boomgo ODM to __ensure the uniqueness one/many key(s) in MongoDB__.
 
 ### Basic Security filter
 
