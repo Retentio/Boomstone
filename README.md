@@ -1,6 +1,8 @@
 Boomstone, a spark for PHP project.
 ===================================
 
+* As silex makes a lot of improvements with BC breaks, boomstone is temporarily deprecated. We are aware of these issues but we are quite busy at the moment.. If you are not, feel free to contribute! *
+
 Features
 --------
 
